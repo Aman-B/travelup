@@ -1,6 +1,7 @@
 package com.codefundo.travelup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private  Bitmap bitmap_friend_image;
     private TextView greet;
     String str_id;
+    public static final String PREFS_NAME = "MyApp_Settings";
+    SharedPreferences settings;
 
     String friend_id,friend_name;
     private AccessToken mAccessToken;
@@ -78,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         //say hello to mr..?
         greet = (TextView) findViewById(R.id.greetings);
 
+        //shared prefs
+        settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+
+
         fbbutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -97,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
+
                     Toast.makeText(getApplicationContext(),"Wait for login..", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -230,6 +238,12 @@ public class MainActivity extends AppCompatActivity {
                         parameters.putString("fields", "id,name,email,gender,birthday,friends");
                         request.setParameters(parameters);
                         request.executeAsync();
+
+                        // Writing data to SharedPreferences
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString("uid", str_id);
+                        editor.commit();
+
 
                        /* *//* make the API call *//*
                         new GraphRequest(
