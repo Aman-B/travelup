@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> friendlist_toget=new ArrayList<>();
 
 
+    //test map
+    Button btn_map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +86,17 @@ public class MainActivity extends AppCompatActivity {
 
         //shared prefs
         settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        btn_map=(Button) findViewById(
+                R.id.map
+        );
 
-
+        btn_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(MainActivity.this, SelectLocationActivity.class);
+                startActivity(i1);
+            }
+        });
         fbbutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
