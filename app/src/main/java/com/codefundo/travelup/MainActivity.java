@@ -28,13 +28,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button fbbutton,getfirendsbutton;
+    private Button fbbutton,getfirendsbutton, btn_nextActivity;
     private ImageView fbimage,friend_fbimage;
+    private  Bitmap bitmap_friend_image;
     private TextView greet;
     String str_id;
 
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final String TAG_CANCEL="Cancelled login.";
     private  final String TAG_ERROR="Error logging in.";
+
+    private ArrayList<String> friendlist_toget=new ArrayList<>();
 
 
     @Override
@@ -63,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize layout button
         fbbutton = (Button) findViewById(R.id.login_button);
         getfirendsbutton = (Button) findViewById(R.id.btn_getfriends);
+        btn_nextActivity=(Button) findViewById(R.id.next_activity);
 
         //intialize image
         fbimage = (ImageView) findViewById(R.id.imageView);
@@ -86,10 +92,44 @@ public class MainActivity extends AppCompatActivity {
         getfirendsbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requestFriends();
+                if(str_id!=null) {
+                    requestFriends();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Wait for login..", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
+        btn_nextActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(str_id!=null) {
+                    requestFriends();
+
+
+                    requestFriends();
+                    Intent i = new Intent(MainActivity.this, DisplayLocationReviewsActivity.class);
+                    friendlist_toget.add(friend_name);
+
+                    i.putExtra("USER-FILTERED-FRIEND-LIST", friendlist_toget);
+                    i.putExtra("USER-SELECTED-LOCATION", "Manipal");
+                    //Convert to byte array
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmap_friend_image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    i.putExtra("bitmap", byteArray);
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Wait for login..", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
 
 
@@ -249,6 +289,8 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(bitmap);
             Toast.makeText(getApplicationContext(),"image received",Toast.LENGTH_SHORT).show();
             image.setImageBitmap(bitmap);
+            bitmap_friend_image=bitmap;
+
         }
 
         @Override

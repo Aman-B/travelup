@@ -1,5 +1,7 @@
 package com.codefundo.travelup;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Work on 10/22/2016.
  */
@@ -9,12 +11,14 @@ public class Review{
     private String userid;
     private String reviewTitle;
     private String reviewBody;
+    private Bitmap mBitmap;
 
     //Getters
-    public Review(String username, String reviewTitle, String reviewBody) {
+    public Review(String username, String reviewTitle, String reviewBody,Bitmap mBitmap) {
         this.username = username;
         this.reviewTitle = reviewTitle;
         this.reviewBody = reviewBody;
+        this.mBitmap=mBitmap;
     }
 
     public String getUserName(){
@@ -33,6 +37,8 @@ public class Review{
         return reviewBody;
     }
 
+    public  Bitmap getImage(){return  mBitmap;}
+
     //Setters
 
     public void setUserName(String username){
@@ -50,5 +56,10 @@ public class Review{
     public void setReviewTitle(String reviewTitle){
         this.reviewTitle = reviewTitle;
     }
+
+    public void setmBitmap(Bitmap mBitmap){
+        this.mBitmap=mBitmap;
+    }
+
 
 }

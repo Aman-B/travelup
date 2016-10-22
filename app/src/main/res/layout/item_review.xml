@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,22 +8,43 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/reviewtitle"
-        android:textSize="20dp"
-        android:layout_margin="10dp"/>
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/reviewbody"
-        android:layout_margin="10dp"/>
+
+        android:layout_below="@+id/reviewtitle"
+        android:layout_alignLeft="@+id/reviewtitle"
+        android:layout_alignStart="@+id/reviewtitle"
+        android:layout_alignRight="@+id/reviewtitle"
+        android:layout_alignEnd="@+id/reviewtitle" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/reviewusername"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"/>
-</LinearLayout>
+        android:layout_below="@+id/reviewbody"
+        android:layout_alignLeft="@+id/reviewbody"
+        android:layout_alignStart="@+id/reviewbody"
+        android:layout_alignRight="@+id/reviewbody"
+        android:layout_alignEnd="@+id/reviewbody" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reviewtitle"
+        android:textSize="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/reviewbody"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignRight="@+id/reviewbody"
+        android:padding="5dp"
+        android:id="@+id/imageView2" />
+</RelativeLayout>
