@@ -32,6 +32,8 @@
         <activity android:name=".PlaceDetails"></activity>
         <activity android:name=".SelectLocationActivity">
         </activity>
+        <activity android:name=".ReviewForm">
+        </activity>
 
     </application>
 

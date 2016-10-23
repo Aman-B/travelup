@@ -36,7 +36,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button fbbutton,getfirendsbutton, btn_nextActivity;
+    private Button fbbutton,getfirendsbutton, btn_nextActivity,btn_reviewform;
     private ImageView fbimage,friend_fbimage;
     private  Bitmap bitmap_friend_image;
     private TextView greet;
@@ -73,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize layout button
         fbbutton = (Button) findViewById(R.id.login_button);
-        getfirendsbutton = (Button) findViewById(R.id.btn_getfriends);
+        //getfirendsbutton = (Button) findViewById(R.id.btn_getfriends);
         btn_nextActivity=(Button) findViewById(R.id.next_activity);
+        btn_reviewform=(Button)findViewById(R.id.form);
 
         //intialize image
         fbimage = (ImageView) findViewById(R.id.imageView);
@@ -108,7 +109,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        getfirendsbutton.setOnClickListener(new View.OnClickListener() {
+        btn_reviewform.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent formIntent = new Intent(MainActivity.this, ReviewForm.class);
+                startActivity(formIntent);
+            }
+        });
+
+       /* getfirendsbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(str_id!=null) {
@@ -120,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Wait for login..", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
         btn_nextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,19 +138,8 @@ public class MainActivity extends AppCompatActivity {
                     requestFriends();
 
 
-                    requestFriends();
-                    Intent i = new Intent(MainActivity.this, DisplayLocationReviewsActivity.class);
-                    friendlist_toget.add(friend_name);
+                  //  requestFriends();
 
-                    i.putExtra("USER-FILTERED-FRIEND-LIST", friendlist_toget);
-                    i.putExtra("USER-SELECTED-LOCATION", "Manipal");
-                    //Convert to byte array
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmap_friend_image.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byte[] byteArray = stream.toByteArray();
-
-                    i.putExtra("bitmap", byteArray);
-                    startActivity(i);
                 }
                 else
                 {
@@ -195,13 +193,28 @@ public class MainActivity extends AppCompatActivity {
 
                             new DownloadfbImage(friend_fbimage).execute("https://graph.facebook.com/" + friend_id + "/picture?type=large");
 
+                            Intent i = new Intent(MainActivity.this, DisplayLocationReviewsActivity.class);
+                            friendlist_toget.add(friend_name);
+
+                            i.putExtra("USER-FILTERED-FRIEND-LIST", friendlist_toget);
+                            i.putExtra("USER-SELECTED-LOCATION", "Manipal");
+                            //Convert to byte array
+                            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                            bitmap_friend_image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                            byte[] byteArray = stream.toByteArray();
+
+                            i.putExtra("bitmap", byteArray);
+                            startActivity(i);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
                     }
                 }
+
         ).executeAsync();
+
 
 
     }

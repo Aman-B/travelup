@@ -15,7 +15,22 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="11dp"
-        android:layout_marginEnd="11dp"
-        android:id="@+id/reviewlist"/>
+
+        android:id="@+id/reviewlist"
+        android:layout_below="@+id/textView6" />
+
+    <TextView
+        android:text="Friends' Stories :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/textView6"
+        android:textStyle="normal|bold"
+        android:paddingLeft="2dp"
+        android:paddingStart="2dp"
+        android:padding="5dp"
+        android:textSize="25sp"/>
 </RelativeLayout>

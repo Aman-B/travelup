@@ -3,7 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
 
+    <RelativeLayout
+        android:id="@+id/form_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:text="Places to visit:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="43dp"
+        android:id="@+id/textView3"
+        android:textColor="#0c27c9" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -33,30 +51,101 @@
         android:id="@+id/textView" />
 
     <TextView
-        android:text="Places to visit:"
+        android:text="Not to miss:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="38dp"
         android:id="@+id/textView2"
-        android:textColor="#0c27c9"/>
+        android:textColor="#0c27c9"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:text="Turtle Bay, Murdeshwar, Jog Falls,\n Hanging Bridge. "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:lines="3"
+        android:id="@+id/textView5"
+        android:paddingRight="10dp"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="Malpe, Kapu, End Point\n Manipal Lake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLines="4"
-        android:lines="4"
-        android:id="@+id/textView5"
+        android:maxLines="3"
+        android:lines="3"
+        android:id="@+id/textView4"
         android:paddingRight="10dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        />
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+        <TextView
+            android:text="Things to eat:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:id="@+id/textView7"
+            android:textColor="#0c27c9"
+            android:layout_below="@+id/textView2"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2" />
+        <TextView
+            android:text="Fish curry, Dosa, Idli and Sambhar, \n Rasam rice . "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:lines="3"
+            android:id="@+id/textView6"
+            android:paddingRight="10dp"
+            android:layout_alignBaseline="@+id/textView7"
+            android:layout_alignBottom="@+id/textView7"
+            android:layout_alignLeft="@+id/textView5"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="How to get by:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:id="@+id/textView8"
+            android:textColor="#0c27c9"
+            android:layout_below="@+id/textView7"
+            android:layout_alignLeft="@+id/textView7"
+            android:layout_alignStart="@+id/textView7" />
+
+        <TextView
+            android:text="There are less trains for this route. A flight to Mangalore could be an option
+             \n From there it takes about 2 hours to Manipal./n In the city, auto and public transport is conveniently available.  "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:lines="4"
+            android:id="@+id/textView9"
+            android:paddingRight="10dp"
+            android:layout_alignBaseline="@+id/textView8"
+            android:layout_alignBottom="@+id/textView8"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

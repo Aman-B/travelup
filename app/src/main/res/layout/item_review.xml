@@ -2,19 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reviewbody"
-
-        android:layout_below="@+id/reviewtitle"
-        android:layout_alignLeft="@+id/reviewtitle"
-        android:layout_alignStart="@+id/reviewtitle"
-        android:layout_alignRight="@+id/reviewtitle"
-        android:layout_alignEnd="@+id/reviewtitle" />
+    android:layout_height="match_parent"
+    >
 
     <TextView
         android:text="TextView"
@@ -25,33 +14,51 @@
         android:layout_alignLeft="@+id/reviewbody"
         android:layout_alignStart="@+id/reviewbody"
         android:layout_alignRight="@+id/reviewbody"
-        android:layout_alignEnd="@+id/reviewbody" />
+        android:layout_alignEnd="@+id/reviewbody"
+        android:layout_marginTop="5dp"
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="268dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/reviewtitle"
-        android:textSize="20dp"
-        android:layout_marginTop="12dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textStyle="normal|italic" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#d4d4d6"
-        android:layout_alignBottom="@+id/reviewusername"/>
+        android:layout_alignBottom="@+id/reviewusername"
+        />
 
     <ImageView
         android:layout_width="60dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:padding="5dp"
         android:id="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/reviewtitle"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reviewtitle"
+        android:textSize="20dp"
         android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2"
+        android:fontFamily="cursive"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/reviewbody"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/reviewtitle"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        />
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
+        android:textColor="@color/com_facebook_likeboxcountview_border_color" />
 
 </RelativeLayout>

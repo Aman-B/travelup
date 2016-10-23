@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -73,10 +74,10 @@ public class DisplayLocationReviewsActivity extends AppCompatActivity implements
             else
             {
                 for(int i=0;i<3;i++) {
-                    Review mReview = new Review("Aman Bakshi", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
+                    Review mReview = new Review(" - Aman Bakshi", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
                             + "Local cuisine isn't to be missed!",bitmap);
                     reviews.add(mReview);
-                    Review mReview2 = new Review("Yash Ugrankar", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
+                    Review mReview2 = new Review("- Yash Ugrankar", " Guide of Manipal ", " What a place! The weather is too good. Greenery everywhere. The beaches are awesome. And so are the people! "
                             + "Local cuisine isn't to be missed!",bitmap);
                     reviews.add(mReview2);
                 }
@@ -95,11 +96,20 @@ public class DisplayLocationReviewsActivity extends AppCompatActivity implements
 
         lv_reviewlist.setAdapter(adapter);
         lv_reviewlist.setOnItemClickListener(this);
+        if(getSupportActionBar()!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(DisplayLocationReviewsActivity.this, PlaceDetails.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        onBackPressed();
+        return super.onOptionsItemSelected(item);
     }
 }
