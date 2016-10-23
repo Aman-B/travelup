@@ -72,11 +72,11 @@ public class DisplayLocationReviewsActivity extends AppCompatActivity implements
         }
             else
             {
-                for(int i=0;i<6;i++) {
-                    Review mReview = new Review("Aman", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
+                for(int i=0;i<3;i++) {
+                    Review mReview = new Review("Aman Bakshi", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
                             + "Local cuisine isn't to be missed!",bitmap);
                     reviews.add(mReview);
-                    Review mReview2 = new Review("Yash", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
+                    Review mReview2 = new Review("Yash Ugrankar", " Guide of Manipal ", " A great place to visit. Better to visit in January-March. The beaches are awesome. And so is the weather. "
                             + "Local cuisine isn't to be missed!",bitmap);
                     reviews.add(mReview2);
                 }

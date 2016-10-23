@@ -38,13 +38,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#d4d4d6"
+        android:layout_alignBottom="@+id/reviewusername"/>
+
     <ImageView
         android:layout_width="60dp"
-        android:layout_height="150dp"
-        android:layout_alignTop="@+id/reviewbody"
+        android:layout_height="100dp"
+        android:padding="5dp"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignRight="@+id/reviewbody"
-        android:padding="5dp"
-        android:id="@+id/imageView2" />
+        />
+
 </RelativeLayout>

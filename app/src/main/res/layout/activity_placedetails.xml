@@ -29,6 +29,34 @@
         android:layout_height="wrap_content"
         android:text="@string/description"
         android:layout_marginTop="225dp"
-        android:layout_marginLeft="5dp"/>
+        android:layout_marginLeft="5dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="Places to visit:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="43dp"
+        android:id="@+id/textView2"
+        android:textColor="#0c27c9"/>
+
+    <TextView
+        android:text="Malpe, Kapu, End Point\n Manipal Lake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:lines="4"
+        android:id="@+id/textView5"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        />
 
 </RelativeLayout>

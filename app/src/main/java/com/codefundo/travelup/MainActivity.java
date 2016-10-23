@@ -145,6 +145,21 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    Intent i = new Intent(MainActivity.this, DisplayLocationReviewsActivity.class);
+                    friendlist_toget.add("Yash");
+
+                    i.putExtra("USER-FILTERED-FRIEND-LIST", friendlist_toget);
+                    i.putExtra("USER-SELECTED-LOCATION", "Manipal");
+                    //Convert to byte array
+                    bitmap_friend_image=BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+
+
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmap_friend_image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    i.putExtra("bitmap", byteArray);
+                    startActivity(i);
                     Toast.makeText(getApplicationContext(),"Wait for login..", Toast.LENGTH_SHORT).show();
                 }
 
